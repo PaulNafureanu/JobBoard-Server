@@ -9,7 +9,7 @@ const app = express();
 const debug = d("index");
 
 app.use(express.json());
-app.use(helmet());
+// app.use(helmet());
 app.use("/", home);
 app.use("/scraper", scraper);
 app.use("/jobs", jobs);
