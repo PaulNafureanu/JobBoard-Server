@@ -1,5 +1,8 @@
 # Ignore all the packages
 /node_modules
 
+# Ignore cache
+/.cache
+
 # Ignore all .js files
 *.js
