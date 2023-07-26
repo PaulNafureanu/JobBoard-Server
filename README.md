@@ -12,3 +12,7 @@ notes
 
 Private: -> Azure
 scraper
+
+    "puppeteer": "^20.9.0"
+
+    "@types/puppeteer": "^7.0.4"
