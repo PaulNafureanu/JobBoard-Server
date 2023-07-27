@@ -6,16 +6,20 @@ const router = express.Router();
 const debug = d("scraper");
 
 router.get("/run", async (req, res) => {
-  const target = "https://www.ejobs.ro/locuri-de-munca/it-software";
+  try {
+    const target = "https://www.ejobs.ro/locuri-de-munca/it-software";
 
-  const browser = await puppeteer.launch({ headless: "new" });
-  const page = await browser.newPage();
-  await page.goto(target);
-  const title = await page.title();
+    const browser = await puppeteer.launch({ headless: "new" });
+    const page = await browser.newPage();
+    await page.goto(target);
+    const title = await page.title();
 
-  await browser.close();
+    await browser.close();
 
-  res.send("Title: " + title);
+    res.send("Title: " + title);
+  } catch (err) {
+    res.send(err);
+  }
 });
 
 router.get("/abort", async (req, res) => {
